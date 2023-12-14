@@ -27,6 +27,14 @@ a {
   cursor: pointer;
 }
 
+.error-control {
+  border: 0.01em solid red;
+}
+
+.error-text {
+  color: red;
+}
+
 body {
   min-width: 100vh;
   min-width: 100dvh;

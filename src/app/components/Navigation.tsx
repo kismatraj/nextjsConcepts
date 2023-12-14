@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 
 const Navigation = () => {
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <div className="flex flex-col md:flex-row justify-between items-center py-4 px-2 bg-gray-400">
@@ -14,6 +13,12 @@ const Navigation = () => {
       >
         Home
       </Link>
+
+      <div className="flex flex-col md:flex-row gap-4 py-4 px-2">
+        <Link href="/data-fetching/ssr">SSR Data fetching</Link>
+        <Link href="/data-fetching/ssg">SSG Data fetching</Link>
+      </div>
+
       <div className="flex flex-col md:flex-row gap-4 py-4 px-2">
         <Link
           href="/sign-in"
