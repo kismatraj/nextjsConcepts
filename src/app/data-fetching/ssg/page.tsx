@@ -1,7 +1,15 @@
-import React from "react";
+import { getAllProducts } from "@/app/lib/products";
+import ProductList from "./ProductList";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Products list",
+  description: "This is the list of all products page",
+};
 
 const SSGPage = () => {
-  return <div>SSG Page</div>;
+  const promise: Promise<TProducts> = getAllProducts();
+  return <ProductList promise={promise} />;
 };
 
 export default SSGPage;

@@ -1,28 +1,18 @@
 import { getAllUsers } from "@/app/lib/users";
 import { Metadata } from "next";
-import User from "./User";
+import UserList from "./UserList";
 
 export const metadata: Metadata = {
-  title: "Server side rendering",
-  description: "At time of request server request data.",
+  title: "User's List",
+  description: "Ths is the user's list.",
 };
-
-// type UsersType = {
-//   users: TUser[];
-//   total: number;
-//   skip: number;
-//   limit: number;
-// };
 
 const SSRPage = async () => {
   const usersPromise: Promise<TUser[]> = getAllUsers();
-  const users = await usersPromise;
 
   return (
     <section>
-      {users.map((u) => (
-        <User key={u.id} user={u} />
-      ))}
+      <UserList promise={usersPromise} />
     </section>
   );
 };
