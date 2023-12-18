@@ -1,11 +1,11 @@
-import AddStudent from "./AddStudent";
-import ListStudents from "./ListStudents";
+import AddCandidate from "./AddCandidate";
+import ListCandidate from "./ListCandidate";
 
 const DataMutationPage = () => {
   return (
     <div>
-      <AddStudent />
-      <ListStudents />
+      <AddCandidate />
+      <ListCandidate />
     </div>
   );
 };

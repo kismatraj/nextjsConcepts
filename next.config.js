@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async headers() {
+    return {
+      "Access-Control-Allow-Origin": ["http://172.16.21.63:5001/api/v1"],
+      "Access-Control-Allow-Methods": ["GET", "POST", "PUT", "DELETE"],
+    };
+  },
   images: {
     remotePatterns: [
       {
