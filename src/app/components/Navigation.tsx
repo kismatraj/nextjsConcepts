@@ -20,6 +20,10 @@ const Navigation = () => {
       </div>
 
       <div className="flex flex-col md:flex-row gap-4 py-4 px-2">
+        <Link href="/mutation">Data mutation</Link>
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-4 py-4 px-2">
         <Link
           href="/sign-in"
           style={{ fontWeight: pathname === "/sign-in" ? "bold" : "normal" }}
