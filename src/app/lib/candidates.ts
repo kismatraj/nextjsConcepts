@@ -1,5 +1,5 @@
 export async function postSingle(candidate: TCandidate) {
-  const res = await fetch("http://172.16.21.63:5001/api/v1/candidate/single", {
+  const res = await fetch("/candidate/single", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(candidate),
@@ -9,7 +9,7 @@ export async function postSingle(candidate: TCandidate) {
 }
 
 export async function getAllCandidates() {
-  const res = await fetch("http://172.16.21.63:5001/api/v1/candidate");
+  const res = await fetch("/candidate");
   if (!res.ok) undefined;
   return res.json();
 }
