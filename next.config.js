@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    baseApiUri: "http://127.0.0.1:5001/api/v1",
+    baseApiUri: "http://172.16.21.63:5001/api/v1",
   },
   async rewrites() {
     return [
       {
         source: "/api/v1/:path*",
-        destination: "http://127.0.0.1:5001/api/v1/:path*", // Proxy to Backend
+        destination: "http://172.16.21.63:5001/api/v1:path*", // Proxy to Backend
       },
     ];
   },
@@ -21,7 +21,7 @@ const nextConfig = {
           { key: "Access-Control-Allow-Credentials", value: "true" },
           {
             key: "Access-Control-Allow-Origin",
-            value: "http://127.0.0.1:5001",
+            value: "http://172.16.21.63:5001",
           }, // replace this your actual origin
           {
             key: "Access-Control-Allow-Methods",

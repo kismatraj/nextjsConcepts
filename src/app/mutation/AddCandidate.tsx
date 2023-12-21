@@ -19,8 +19,6 @@ const AddCandidate = () => {
 
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    console.log(candidate);
-
     const saved = await postSingle(candidate);
     console.log(saved);
   };
