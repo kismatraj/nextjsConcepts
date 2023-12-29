@@ -3,7 +3,7 @@ import ListCandidate from "./ListCandidate";
 
 const DataMutationPage = () => {
   return (
-    <div>
+    <div className="flex flex-col md:flex-row">
       <AddCandidate />
       <ListCandidate />
     </div>

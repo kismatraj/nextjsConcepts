@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { postSingle } from "../lib/candidates";
+import { postSingleAction } from "../lib/candidateActions";
 
 const init: TCandidate = {
   _id: "",
@@ -17,14 +17,14 @@ const AddCandidate = () => {
     setCandidate((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    const saved = await postSingle(candidate);
-    console.log(saved);
-  };
+  // const handleSubmitAction = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  //   e.preventDefault();
+  //   const saved = await postSingleAction(candidate);
+  //   console.log(saved);
+  // };
 
   return (
-    <form className="flex flex-col gap-3">
+    <form action={postSingleAction} className="flex flex-col gap-3">
       <p className="font-bold text-center mt-3">Add Candidate</p>
       <div className="flex flex-col">
         <label htmlFor="name">Name</label>
@@ -69,7 +69,7 @@ const AddCandidate = () => {
           className="p-4 border border-1"
         />
       </div>
-      <button onClick={handleSubmit}>Submit</button>
+      <button>Submit</button>
     </form>
   );
 };

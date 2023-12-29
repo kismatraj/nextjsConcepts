@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 
 export async function middleware(req: Request) {
-  const allowedOrigins = [".*"];
+  const allowedOrigins = ["/api/:path*"];
   //   const regex = new RegExp("/api/:.*");
   //   if (regex.test(req.url)) {
   const origin = req.headers.get("origin") as string;
-  console.log(origin);
+  // console.log(origin);
 
   if (origin && !allowedOrigins.includes(origin))
     return new NextResponse(null, {
@@ -14,9 +14,9 @@ export async function middleware(req: Request) {
       headers: { "Content-Type": "text/plain" },
     });
 
-  console.log(process.env.NODE_ENV);
-  console.log(req.method);
-  console.log(req.url);
+  // console.log(process.env.NODE_ENV);
+  // console.log(req.method);
+  // console.log(req.url);
 
   return NextResponse.next();
 }
