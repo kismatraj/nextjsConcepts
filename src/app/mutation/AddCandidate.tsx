@@ -1,21 +1,21 @@
-"use client";
-import { useState } from "react";
-import { postSingleAction } from "../lib/candidateActions";
+// "use client";
+// import { useState } from "react";
+import { saveCandidateAction } from "../lib/candidateActions";
 
-const init: TCandidate = {
-  _id: "",
-  name: "",
-  fatherName: "",
-  motherName: "",
-  courseName: "",
-};
+// const init: TCandidate = {
+//   _id: "",
+//   name: "",
+//   fatherName: "",
+//   motherName: "",
+//   courseName: "",
+// };
 
 const AddCandidate = () => {
-  const [candidate, setCandidate] = useState<TCandidate>(init);
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setCandidate((prevData) => ({ ...prevData, [name]: value }));
-  };
+  // const [candidate, setCandidate] = useState<TCandidate>(init);
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { name, value } = e.target;
+  //   setCandidate((prevData) => ({ ...prevData, [name]: value }));
+  // };
 
   // const handleSubmitAction = async (e: React.MouseEvent<HTMLButtonElement>) => {
   //   e.preventDefault();
@@ -24,16 +24,16 @@ const AddCandidate = () => {
   // };
 
   return (
-    <form action={postSingleAction} className="flex flex-col gap-3">
+    <form className="flex flex-col gap-3">
       <p className="font-bold text-center mt-3">Add Candidate</p>
       <div className="flex flex-col">
         <label htmlFor="name">Name</label>
         <input
           type="text"
           name="name"
-          value={candidate?.name}
-          onChange={handleChange}
-          className="p-4 border border-1"
+          // value={candidate?.name}
+          // onChange={handleChange}
+          className="p-2 border border-1"
         />
       </div>
 
@@ -42,9 +42,9 @@ const AddCandidate = () => {
         <input
           type="text"
           name="fatherName"
-          value={candidate?.fatherName}
-          onChange={handleChange}
-          className="p-4 border border-1"
+          // value={candidate?.fatherName}
+          // onChange={handleChange}
+          className="p-2 border border-1"
         />
       </div>
 
@@ -53,9 +53,9 @@ const AddCandidate = () => {
         <input
           type="text"
           name="motherName"
-          value={candidate?.motherName}
-          onChange={handleChange}
-          className="p-4 border border-1"
+          // value={candidate?.motherName}
+          // onChange={handleChange}
+          className="p-2 border border-1"
         />
       </div>
 
@@ -64,12 +64,12 @@ const AddCandidate = () => {
         <input
           type="text"
           name="courseName"
-          value={candidate?.courseName}
-          onChange={handleChange}
-          className="p-4 border border-1"
+          // value={candidate?.courseName}
+          // onChange={handleChange}
+          className="p-2 border border-1"
         />
       </div>
-      <button>Submit</button>
+      <button formAction={saveCandidateAction}>Submit</button>
     </form>
   );
 };

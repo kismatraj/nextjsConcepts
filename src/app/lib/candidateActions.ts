@@ -1,25 +1,29 @@
 "use server";
 
-// import { revalidatePath } from "next/cache";
+import { revalidatePath } from "next/cache";
 
-export async function postSingleAction(data: FormData) {
-  // console.log("Form Data", data);
-  const name = data.get("name");
-  console.log("Form Data ", name);
-
-  // const { name, fatherName, motherName, courseName } = candidate;
-  // const res = await fetch("/candidate/single", {
-  //   method: "POST",
-  //   headers: { "content-type": "application/json" },
-  //   body: JSON.stringify({ name, fatherName, motherName, courseName }),
-  // });
-  // if (!res.ok) undefined;
-  // return res.json();
-  // revalidatePath("/mutation");
+export async function saveCandidateAction(candidate: TCandidate) {
+  const res = await fetch(`${process.env.baseApiUri}/candidate/single`, {
+    body: JSON.stringify(candidate),
+    headers: {
+      "content-type": "application/json",
+    },
+    method: "POST",
+  });
+  if (!res.ok) undefined;
+  const promise: Promise<{ status: string; data: TCandidate[] }> =
+    await res.json();
+  const candidates = await promise;
+  console.log(candidates);
+  revalidatePath("/");
+  return candidates;
 }
 
 export async function getAllCandidatesAction() {
-  const res = await fetch("/candidate");
+  const res = await fetch(`${process.env.baseApiUri}/candidate`);
   if (!res.ok) undefined;
-  return res.json();
+  const promise: Promise<{ status: string; data: TCandidate[] }> =
+    await res.json();
+  const candidates = await promise;
+  return candidates;
 }

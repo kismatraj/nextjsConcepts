@@ -1,16 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  env: {
-    baseApiUri: "http://172.16.21.63:5001/api/v1",
-  },
-  async rewrites() {
-    return [
-      {
-        source: "/api/v1/:path*",
-        destination: "http://172.16.21.63:5001/api/v1:path*", // Proxy to Backend
-      },
-    ];
-  },
+  // env: {
+  //   baseApiUri: "http://172.16.21.63:5001/api/v1",
+  // },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/api/v1/:path*",
+  //       destination: "http://172.16.21.63:5001/api/v1:path*", // Proxy to Backend
+  //     },
+  //   ];
+  // },
 
   async headers() {
     return [
