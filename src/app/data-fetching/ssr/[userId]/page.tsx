@@ -1,4 +1,4 @@
-import { getUserDetails, getUserPosts } from "@/app/lib/users";
+import { getUserDetails, getUserPosts } from "@/app/_lib/users";
 import UserDetails from "../UserDetails";
 import { Suspense } from "react";
 import UserPost from "../UserPost";

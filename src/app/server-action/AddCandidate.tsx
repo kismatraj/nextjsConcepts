@@ -1,5 +1,5 @@
 "use client";
-import { saveCandidateAction } from "../lib/candidateActions";
+import { saveCandidateAction } from "../_lib/candidateActions";
 import { useState } from "react";
 
 const init: TCandidate = {

@@ -1,4 +1,4 @@
-import { getAllProducts, getProductDetails } from "@/app/lib/products";
+import { getAllProducts, getProductDetails } from "@/app/_lib/products";
 import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";

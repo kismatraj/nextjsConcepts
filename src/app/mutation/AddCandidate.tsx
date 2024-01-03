@@ -1,6 +1,6 @@
 // "use client";
 // import { useState } from "react";
-import { saveCandidateAction } from "../lib/candidateActions";
+import { saveCandidateAction } from "../_lib/candidateActions";
 
 // const init: TCandidate = {
 //   _id: "",

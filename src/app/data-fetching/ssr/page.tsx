@@ -1,4 +1,4 @@
-import { getAllUsers } from "@/app/lib/users";
+import { getAllUsers } from "@/app/_lib/users";
 import { Metadata } from "next";
 import UserList from "./UserList";
 

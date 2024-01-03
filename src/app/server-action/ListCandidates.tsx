@@ -1,4 +1,4 @@
-import { getAllCandidatesAction } from "../lib/candidateActions";
+import { getAllCandidatesAction } from "../_lib/candidateActions";
 
 const ListCandidates = async () => {
   const { status, data } = await getAllCandidatesAction();

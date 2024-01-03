@@ -1,4 +1,4 @@
-import { getAllProducts } from "@/app/lib/products";
+import { getAllProducts } from "@/app/_lib/products";
 import ProductList from "./ProductList";
 import { Metadata } from "next";
 
