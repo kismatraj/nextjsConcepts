@@ -1,6 +1,8 @@
 "use client";
 import { useForm, SubmitHandler } from "react-hook-form";
 import NavigateButton from "@/app/components/NavigateButton";
+import { signUpAction } from "@/app/_lib/signUpAction";
+import { use } from "react";
 // import { DevTool } from "@hookform/devtools";
 
 const SignUp = () => {
@@ -14,6 +16,12 @@ const SignUp = () => {
 
   const submitForm: SubmitHandler<TSignUpSchema> = (data) => {
     console.log("Submitted", data);
+    const d = use(signUpAction(data));
+    console.log(d);
+  };
+
+  const handleButtonClick = () => {
+    console.log("Clicked");
   };
 
   return (
@@ -22,9 +30,9 @@ const SignUp = () => {
       {/* noValidate: disable browser validation, this will allow react hook form to apply validation rules */}
       <form
         noValidate
-        action=""
         className="flex flex-col justify-center gap-3"
-        onSubmit={handleSubmit(submitForm)}
+        // onSubmit={handleSubmit(submitForm)}
+        autoComplete="off"
       >
         <div className="flex flex-col md:flex-row gap-2">
           <div className="flex flex-col">
@@ -122,7 +130,7 @@ const SignUp = () => {
           <p className="error-text">{errors.confirmPassword?.message}</p>
         </div>
 
-        <button>Register now</button>
+        <button onClick={handleButtonClick}>Register now</button>
       </form>
       {/* <DevTool control={control} /> */}
 

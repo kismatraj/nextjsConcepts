@@ -4,11 +4,11 @@ import { revalidatePath } from "next/cache";
 
 export async function saveCandidateAction(candidate: TCandidate) {
   const res = await fetch(`${process.env.baseApiUri}/candidate/single`, {
-    body: JSON.stringify(candidate),
+    method: "POST",
     headers: {
       "content-type": "application/json",
     },
-    method: "POST",
+    body: JSON.stringify(candidate),
   });
   if (!res.ok) undefined;
   const promise: Promise<{ status: string; data: TCandidate[] }> =
